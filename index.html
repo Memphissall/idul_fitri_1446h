@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Selamat Idul Fitri</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            background-color: #f3f4f6;
+            background-image: url('https://source.unsplash.com/800x600/?eid,mubarak,mosque');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            width: 350px;
+        }
+        h2 {
+            color: #28a745;
+            font-size: 24px;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #hasil {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🌙 Ucapan Selamat Idul Fitri 🌙</h2>
+        <label for="nama">Masukkan Nama:</label>
+        <input type="text" id="nama" placeholder="Nama Anda">
+        <br><br>
+        <label for="umur">Masukkan Umur:</label>
+        <input type="number" id="umur" placeholder="Umur Anda">
+        <br><br>
+        <button onclick="tampilkanUcapan()">Kirim</button>
+        <p id="hasil"></p>
+    </div>
+    <script>
+        function ucapanSelamatIdulFitri(nama, umur) {
+            if (umur < 18) {
+                return `Faizal mengucapkan selamat hari raya Idul Fitri, ${nama}! Semoga kamu tumbuh menjadi anak yang soleh ya cill.`;
+            } else if (umur >= 18 && umur < 60) {
+                return `Faizal mengucapkan selamat hari raya  Idul Fitri, ${nama}! Semoga amal ibadahmu diterima Allah SWT.AYO KATANYA MAU JADI ORANG SUKSES`;
+            } else {
+                return `Faizal mengucapkan selamat hari raya  Idul Fitri, ${nama}! Semoga kamu diberikan kesehatan dan keberkahan.`;
+            }
+        }function tampilkanUcapan() {
+        let nama = document.getElementById("nama").value;
+        let umur = document.getElementById("umur").value;
+        let hasil = document.getElementById("hasil");
+        
+        if (nama === "" || umur === "") {
+            hasil.innerText = "Silakan masukkan nama dan umur!";
+            return;
+        }
+        
+        umur = parseInt(umur);
+        if (umur < 0) {
+            hasil.innerText = "Umur tidak bisa negatif!";
+        } else {
+            hasil.innerText = ucapanSelamatIdulFitri(nama, umur);
+        }
+    }
+</script>
+
+</body>
+</html>
